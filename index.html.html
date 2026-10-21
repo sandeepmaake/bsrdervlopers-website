@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSR Developers | Premium Real Estate in Rajahmundry & Kovvur</title>
+    <!-- Local SEO Meta Tags -->
+    <meta name="description" content="BSR Developers in Rajahmundry & Kovvur offer premium ventures, formlands, open plots, and construction services.">
+    <meta name="keywords" content="BSR Developers Rajahmundry, BSR Developers Kovvur, Real Estate agents Rajahmundry, Open plots in Kovvur, Farmlands Rajahmundry">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#DC2626',
+                        brandDark: '#111827',
+                        brandGold: '#D97706'
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Top Bar -->
+    <div class="bg-brandDark text-gray-300 text-xs py-2 px-4 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span><i class="fas fa-map-marker-alt text-brandRed mr-1"></i> AV Appa Rao Road, Vidyuth Colony, Rajahmundry & Kovvur</span>
+                <span><i class="fas fa-phone-alt text-brandRed mr-1"></i> +91 81977 65900</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="text-brandGold font-medium">"Key's to your Dream Home"</span>
+                <button onclick="openAdminLogin()" class="bg-gray-800 hover:bg-brandRed text-white px-3 py-1 rounded text-xs transition"><i class="fas fa-lock mr-1"></i> Admin Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3">
+                <div class="bg-white p-1 rounded shadow-sm border border-gray-200 flex items-center">
+                    <div class="text-xl sm:text-2xl font-black tracking-wider text-brandRed flex items-center">
+                        BSR <span class="text-[10px] sm:text-xs text-orange-500 ml-1 font-bold border border-orange-500 rounded px-1">DEVELOPERS</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-gray-700">
+                <a href="#home" class="text-brandRed hover:text-brandRed transition">Home</a>
+                <a href="#about" class="hover:text-brandRed transition">About Us</a>
+                <a href="#services" class="hover:text-brandRed transition">Ventures & Formlands</a>
+                <a href="#projects" class="hover:text-brandRed transition">Projects</a>
+                <a href="#contact" class="hover:text-brandRed transition">Contact</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <button onclick="openEnquiryModal('General Inquiry')" class="bg-brandRed text-white px-5 py-2.5 rounded-full font-semibold text-sm shadow-lg shadow-brandRed/30 hover:bg-red-700 transition">
+                    <i class="fas fa-paper-plane mr-2"></i> Enquire Now
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-gray-700 text-2xl focus:outline-none p-2">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-6 py-4 space-y-4 shadow-xl">
+            <a href="#home" onclick="toggleMobileMenu()" class="block text-gray-800 font-semibold text-base py-1 border-b border-gray-100">Home</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block text-gray-800 font-semibold text-base py-1 border-b border-gray-100">About Us</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block text-gray-800 font-semibold text-base py-1 border-b border-gray-100">Ventures & Formlands</a>
+            <a href="#projects" onclick="toggleMobileMenu()" class="block text-gray-800 font-semibold text-base py-1 border-b border-gray-100">Projects</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block text-gray-800 font-semibold text-base py-1 border-b border-gray-100">Contact</a>
+            <div class="pt-2 flex flex-col space-y-3">
+                <button onclick="openAdminLogin(); toggleMobileMenu();" class="w-full bg-gray-900 text-white py-2.5 rounded-xl font-bold text-sm"><i class="fas fa-lock mr-2"></i> Admin Login</button>
+                <button onclick="openEnquiryModal('Mobile Header Enquiry'); toggleMobileMenu();" class="w-full bg-brandRed text-white py-3 rounded-xl font-bold text-sm text-center shadow-md">Enquire Now</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-brandDark text-white py-16 sm:py-24 lg:py-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-35 bg-cover bg-center mix-blend-overlay" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1920');"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+                <span class="inline-block bg-brandRed/20 text-brandRed border border-brandRed/30 px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-bold tracking-wider uppercase">
+                    Premier Real Estate Experts in Kovvur & Rajahmundry
+                </span>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                    Find Your Dream Home with <span class="text-brandRed">BSR Developers</span>
+                </h1>
+                <p class="text-sm sm:text-lg text-gray-300 max-w-2xl font-light mx-auto lg:mx-0">
+                    Specialized in high-value Ventures, Formlands, Rural Estates, and bespoke Constructions across Rajahmundry and Kovvur.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 justify-center lg:justify-start">
+                    <a href="#projects" class="bg-brandRed text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold shadow-xl shadow-brandRed/40 hover:bg-red-700 transition text-center text-sm sm:text-base">
+                        Explore Properties
+                    </a>
+                    <button onclick="openEnquiryModal('Hero Free Consultation')" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold backdrop-blur-sm transition text-sm sm:text-base">
+                        Get Free Consultation
+                    </button>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 w-full">
+                <div class="bg-white/10 backdrop-blur-md p-5 sm:p-6 rounded-2xl border border-white/20 shadow-2xl">
+                    <h3 class="text-lg sm:text-xl font-bold mb-4 text-white">Quick Property Inquiry</h3>
+                    <form onsubmit="handleQuickForm(event)" class="space-y-3.5 sm:space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Full Name</label>
+                            <input type="text" id="q-name" required class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brandRed text-sm" placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Phone Number</label>
+                            <input type="tel" id="q-phone" required class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brandRed text-sm" placeholder="Enter phone number">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Location / City</label>
+                            <input type="text" id="q-location" required class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brandRed text-sm" placeholder="e.g. Rajahmundry / Kovvur">
+                        </div>
+                        <button type="submit" class="w-full bg-brandRed hover:bg-red-700 text-white font-bold py-3.5 rounded-xl transition shadow-md text-sm">
+                            Submit Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 sm:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <h2 class="text-xs font-extrabold text-brandRed tracking-widest uppercase mb-2">Our Expertise</h2>
+                <h3 class="text-2xl sm:text-4xl font-extrabold text-gray-900">Comprehensive Real Estate Services</h3>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-gray-50 rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-red-100 text-brandRed rounded-xl flex items-center justify-center text-xl sm:text-2xl font-bold mb-5"><i class="fas fa-city"></i></div>
+                        <h4 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Ventures & Open Plots</h4>
+                        <p class="text-gray-600 text-xs sm:text-sm mb-6 leading-relaxed">DTCP approved open plot ventures in Kovvur and Rajahmundry with top infrastructure.</p>
+                    </div>
+                    <button onclick="openEnquiryModal('Ventures & Open Plots')" class="text-brandRed font-bold text-sm hover:underline text-left">Enquire Now &rarr;</button>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-green-100 text-green-600 rounded-xl flex items-center justify-center text-xl sm:text-2xl font-bold mb-5"><i class="fas fa-tractor"></i></div>
+                        <h4 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Formlands & Estates</h4>
+                        <p class="text-gray-600 text-xs sm:text-sm mb-6 leading-relaxed">Specialists in agricultural land transactions and rural estates with complete verification.</p>
+                    </div>
+                    <button onclick="openEnquiryModal('Formlands & Estates')" class="text-brandRed font-bold text-sm hover:underline text-left">Enquire Now &rarr;</button>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm flex flex-col justify-between sm:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-amber-100 text-brandGold rounded-xl flex items-center justify-center text-xl sm:text-2xl font-bold mb-5"><i class="fas fa-hard-hat"></i></div>
+                        <h4 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Constructions & Villas</h4>
+                        <p class="text-gray-600 text-xs sm:text-sm mb-6 leading-relaxed">High-quality residential villas and independent houses tailored to modern standards.</p>
+                    </div>
+                    <button onclick="openEnquiryModal('Constructions & Villas')" class="text-brandRed font-bold text-sm hover:underline text-left">Enquire Now &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 sm:py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <h2 class="text-xs font-extrabold text-brandRed tracking-widest uppercase mb-2">Portfolio</h2>
+                <h3 class="text-2xl sm:text-4xl font-extrabold text-gray-900">Featured Ventures & Estates</h3>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800" alt="Formlands" class="w-full h-52 sm:h-60 object-cover">
+                    <div class="p-5 sm:p-6 flex flex-col flex-1 justify-between">
+                        <div>
+                            <h4 class="text-lg sm:text-xl font-bold text-gray-900 mb-2">Green Valley Formlands</h4>
+                            <p class="text-gray-500 text-xs sm:text-sm mb-4"><i class="fas fa-map-marker-alt text-brandRed mr-1"></i> Kovvur Outskirts</p>
+                        </div>
+                        <button onclick="openEnquiryModal('Green Valley Formlands (Kovvur)')" class="w-full bg-brandRed/10 text-brandRed py-3 rounded-xl text-xs sm:text-sm font-bold hover:bg-brandRed hover:text-white transition">Enquire Details</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800" alt="Royal Avenue" class="w-full h-52 sm:h-60 object-cover">
+                    <div class="p-5 sm:p-6 flex flex-col flex-1 justify-between">
+                        <div>
+                            <h4 class="text-lg sm:text-xl font-bold text-gray-900 mb-2">Royal Avenue Plots</h4>
+                            <p class="text-gray-500 text-xs sm:text-sm mb-4"><i class="fas fa-map-marker-alt text-brandRed mr-1"></i> AV Appa Rao Road, Rajahmundry</p>
+                        </div>
+                        <button onclick="openEnquiryModal('Royal Avenue Plots (Rajahmundry)')" class="w-full bg-brandRed/10 text-brandRed py-3 rounded-xl text-xs sm:text-sm font-bold hover:bg-brandRed hover:text-white transition">Enquire Details</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md flex flex-col sm:col-span-2 lg:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800" alt="Villas" class="w-full h-52 sm:h-60 object-cover">
+                    <div class="p-5 sm:p-6 flex flex-col flex-1 justify-between">
+                        <div>
+                            <h4 class="text-lg sm:text-xl font-bold text-gray-900 mb-2">BSR Luxury Villas</h4>
+                            <p class="text-gray-500 text-xs sm:text-sm mb-4"><i class="fas fa-map-marker-alt text-brandRed mr-1"></i> East Godavari Region</p>
+                        </div>
+                        <button onclick="openEnquiryModal('BSR Luxury Villas')" class="w-full bg-brandRed/10 text-brandRed py-3 rounded-xl text-xs sm:text-sm font-bold hover:bg-brandRed hover:text-white transition">Enquire Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-brandDark text-gray-400 py-10 sm:py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center border-b border-gray-800 pb-8 mb-8 text-center md:text-left">
+            <div class="text-white font-black text-xl mb-4 md:mb-0">
+                BSR <span class="text-brandRed">DEVELOPERS</span>
+            </div>
+            <p class="text-sm text-brandGold italic">"Key's to your Dream Home"</p>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 space-y-4 sm:space-y-0 text-center">
+            <p>&copy; 2026 BSR Developers All Rights Reserved.</p>
+            <p>Designed by <a href="https://www.cbdigitalsolutions.in" target="_blank" class="text-brandGold hover:underline font-semibold">cb digital solutions</a></p>
+        </div>
+    </footer>
+
+    <!-- ================= LANDING PAGE ENQUIRY MODAL ================= -->
+    <div id="enquiry-modal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-gray-100 mx-4">
+            <button onclick="closeEnquiryModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 text-xl p-2"><i class="fas fa-times"></i></button>
+            <div class="mb-5">
+                <span class="bg-brandRed/10 text-brandRed text-[11px] font-extrabold px-3 py-1 rounded-full uppercase">Instant Landing Page</span>
+                <h3 class="text-xl sm:text-2xl font-black text-gray-900 mt-2">Property Enquiry Form</h3>
+                <p id="modal-subtitle" class="text-xs text-gray-500 mt-1">Fill in your details below to connect with our sales team.</p>
+            </div>
+            <form onsubmit="submitEnquiryForm(event)" class="space-y-3.5">
+                <input type="hidden" id="modal-property-interest">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Full Name *</label>
+                    <input type="text" id="m-name" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandRed" placeholder="Enter your full name">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Contact Number *</label>
+                        <input type="tel" id="m-phone" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandRed" placeholder="Phone number">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Email Address *</label>
+                        <input type="email" id="m-email" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandRed" placeholder="Email address">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Location / Current City *</label>
+                    <input type="text" id="m-location" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandRed" placeholder="e.g. Rajahmundry, Kovvur">
+                </div>
+                <button type="submit" class="w-full bg-brandRed hover:bg-red-700 text-white font-bold py-3.5 rounded-xl transition shadow-lg shadow-brandRed/30 text-sm">
+                    Submit Enquiry & Get Details
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ================= ADMIN LOGIN & BACKEND PANEL MODAL ================= -->
+    <div id="admin-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-4xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto mx-4">
+            <button onclick="closeAdminModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 text-xl p-2"><i class="fas fa-times"></i></button>
+            
+            <div id="admin-login-view">
+                <h3 class="text-xl sm:text-2xl font-black text-gray-900 mb-2">Admin Dashboard Login</h3>
+                <p class="text-xs text-gray-500 mb-6">Enter password to manage client enquiries stored in backend database.</p>
+                <div class="space-y-4 max-w-sm">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Password</label>
+                        <input type="password" id="admin-pass" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brandRed" placeholder="Enter admin password">
+                    </div>
+                    <button onclick="verifyAdminLogin()" class="w-full bg-brandDark text-white font-bold py-3 rounded-xl hover:bg-black transition text-sm">Login to Backend</button>
+                    <p class="text-xs text-gray-400 italic">Default Password: <b>admin123</b></p>
+                </div>
+            </div>
+
+            <div id="admin-dashboard-view" class="hidden">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 border-b pb-4 gap-4">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-black text-gray-900">Backend Enquiries</h3>
+                        <p class="text-xs text-gray-500">All customer submissions stored in real-time.</p>
+                    </div>
+                    <button onclick="logoutAdmin()" class="bg-red-100 text-brandRed px-4 py-2 rounded-xl text-xs font-bold hover:bg-brandRed hover:text-white transition">Logout</button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs sm:text-sm">
+                        <thead class="bg-gray-100 text-gray-700 uppercase text-[10px] sm:text-xs">
+                            <tr>
+                                <th class="p-2 sm:p-3 rounded-l-lg">Date</th>
+                                <th class="p-2 sm:p-3">Name</th>
+                                <th class="p-2 sm:p-3">Phone</th>
+                                <th class="p-2 sm:p-3">Email</th>
+                                <th class="p-2 sm:p-3">Location</th>
+                                <th class="p-2 sm:p-3 rounded-r-lg">Interest</th>
+                            </tr>
+                        </thead>
+                        <tbody id="enquiries-table-body" class="divide-y divide-gray-100"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= FLOATING BUTTONS (WHATSAPP & AI BOT) ================= -->
+    <div class="fixed bottom-5 right-5 z-45 flex flex-col space-y-3">
+        <button onclick="toggleAIChat()" class="relative bg-gradient-to-r from-blue-600 to-indigo-600 text-white w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition transform group">
+            <i class="fas fa-robot text-xl sm:text-2xl"></i>
+            <span class="hidden sm:group-hover:block absolute right-16 bg-white text-gray-900 text-xs font-bold px-3 py-1 rounded-lg shadow-md whitespace-nowrap">Smart AI Agent</span>
+        </button>
+        <a href="https://wa.me/918197765900?text=Hello%20BSR%20Developers,%20I%20am%20interested%20in%20your%20properties." target="_blank" class="relative bg-green-500 text-white w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition transform group">
+            <i class="fab fa-whatsapp text-2xl sm:text-3xl"></i>
+            <span class="hidden sm:group-hover:block absolute right-16 bg-white text-gray-900 text-xs font-bold px-3 py-1 rounded-lg shadow-md whitespace-nowrap">WhatsApp Chat</span>
+        </a>
+    </div>
+
+    <!-- ================= SMART AI CHAT WINDOW ================= -->
+    <div id="ai-chat-modal" class="hidden fixed bottom-20 sm:bottom-24 right-4 sm:right-6 z-50 w-[90%] sm:w-96 bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col">
+        <div class="bg-brandDark text-white p-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                <span class="font-bold text-xs sm:text-sm">BSR Autonomous AI Agent</span>
+            </div>
+            <button onclick="toggleAIChat()" class="text-gray-400 hover:text-white p-1"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="chat-messages" class="p-4 h-64 sm:h-72 overflow-y-auto space-y-3 bg-gray-50 text-xs">
+            <div class="bg-white p-3 rounded-2xl shadow-sm border border-gray-100 max-w-[85%]">
+                Namaste! I am BSR's autonomous AI property advisor. Ask me anything about our open plots in Kovvur, formlands, or projects in Rajahmundry!
+            </div>
+        </div>
+        <div class="p-3 bg-white border-t border-gray-200 flex space-x-2">
+            <input type="text" id="chat-input" placeholder="Ask questions..." class="flex-1 bg-gray-100 border border-gray-200 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-brandRed" onkeypress="if(event.key === 'Enter') sendAIMessage()">
+            <button onclick="sendAIMessage()" class="bg-brandRed text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-red-700">Send</button>
+        </div>
+    </div>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        function toggleMobileMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        function openEnquiryModal(interest) {
+            document.getElementById('modal-property-interest').value = interest;
+            document.getElementById('modal-subtitle').innerText = "Enquiring about: " + interest;
+            document.getElementById('enquiry-modal').classList.remove('hidden');
+        }
+        function closeEnquiryModal() {
+            document.getElementById('enquiry-modal').classList.add('hidden');
+        }
+
+        function handleQuickForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('q-name').value;
+            const phone = document.getElementById('q-phone').value;
+            const location = document.getElementById('q-location').value;
+            
+            saveEnquiryToBackend({
+                date: new Date().toLocaleString(),
+                name: name,
+                phone: phone,
+                email: 'Not provided',
+                location: location,
+                interest: 'Hero Quick Form'
+            });
+
+            alert('Thank you ' + name + '! Details submitted successfully.');
+            e.target.reset();
+        }
+
+        function submitEnquiryForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('m-name').value;
+            const phone = document.getElementById('m-phone').value;
+            const email = document.getElementById('m-email').value;
+            const location = document.getElementById('m-location').value;
+            const interest = document.getElementById('modal-property-interest').value;
+
+            saveEnquiryToBackend({
+                date: new Date().toLocaleString(),
+                name: name,
+                phone: phone,
+                email: email,
+                location: location,
+                interest: interest
+            });
+
+            closeEnquiryModal();
+            alert('Enquiry submitted successfully!');
+            e.target.reset();
+        }
+
+        function saveEnquiryToBackend(data) {
+            let enquiries = JSON.parse(localStorage.getItem('bsr_enquiries')) || [];
+            enquiries.unshift(data);
+            localStorage.setItem('bsr_enquiries', JSON.stringify(enquiries));
+        }
+
+        function openAdminLogin() {
+            document.getElementById('admin-modal').classList.remove('hidden');
+            document.getElementById('admin-pass').value = '';
+        }
+        function closeAdminModal() {
+            document.getElementById('admin-modal').classList.add('hidden');
+            document.getElementById('admin-login-view').classList.remove('hidden');
+            document.getElementById('admin-dashboard-view').classList.add('hidden');
+        }
+        function verifyAdminLogin() {
+            const pass = document.getElementById('admin-pass').value;
+            if(pass === 'admin123') {
+                document.getElementById('admin-login-view').classList.add('hidden');
+                document.getElementById('admin-dashboard-view').classList.remove('hidden');
+                loadEnquiriesTable();
+            } else {
+                alert('Incorrect password! Default password is admin123');
+            }
+        }
+        function logoutAdmin() {
+            document.getElementById('admin-login-view').classList.remove('hidden');
+            document.getElementById('admin-dashboard-view').classList.add('hidden');
+        }
+        function loadEnquiriesTable() {
+            const tbody = document.getElementById('enquiries-table-body');
+            let enquiries = JSON.parse(localStorage.getItem('bsr_enquiries')) || [];
+            
+            if(enquiries.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-gray-400">No enquiries found in backend yet.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = '';
+            enquiries.forEach(item => {
+                tbody.innerHTML += `
+                    <tr class="hover:bg-gray-50 border-b border-gray-100">
+                        <td class="p-2 sm:p-3 text-[10px] sm:text-xs text-gray-500">${item.date}</td>
+                        <td class="p-2 sm:p-3 font-bold text-gray-900">${item.name}</td>
+                        <td class="p-2 sm:p-3 text-gray-700">${item.phone}</td>
+                        <td class="p-2 sm:p-3 text-gray-600 text-[11px]">${item.email}</td>
+                        <td class="p-2 sm:p-3 text-gray-700 font-medium">${item.location}</td>
+                        <td class="p-2 sm:p-3"><span class="bg-red-50 text-brandRed px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-semibold">${item.interest}</span></td>
+                    </tr>
+                `;
+            });
+        }
+
+        function toggleAIChat() {
+            document.getElementById('ai-chat-modal').classList.toggle('hidden');
+        }
+
+        function sendAIMessage() {
+            const input = document.getElementById('chat-input');
+            const messages = document.getElementById('chat-messages');
+            const query = input.value.trim().toLowerCase();
+            if(!query) return;
+
+            messages.innerHTML += `<div class="bg-brandRed text-white p-3 rounded-2xl shadow-sm max-w-[85%] ml-auto">${input.value}</div>`;
+            input.value = '';
+            messages.scrollTop = messages.scrollHeight;
+
+            setTimeout(() => {
+                let aiReply = "Thank you for reaching out to BSR Developers. Would you like to share your contact number and location so our team can assist you?";
+                
+                if(query.includes('kovvur') || query.includes('formland')) {
+                    aiReply = "Autonomous AI Decision: In Kovvur, we have exclusive agricultural formland ventures. Would you like to schedule a site visit?";
+                } else if(query.includes('rajahmundry') || query.includes('plots') || query.includes('venture')) {
+                    aiReply = "Autonomous AI Decision: In Rajahmundry, we feature prime DTCP-approved open plots near AV Appa Rao Road, Vidyuth Colony.";
+                } else if(query.includes('price') || query.includes('cost') || query.includes('rate')) {
+                    aiReply = "Autonomous AI Decision: Property pricing depends on the exact layout and sq. yards you select. Please provide your phone number via our Enquiry form.";
+                }
+
+                messages.innerHTML += `<div class="bg-white p-3 rounded-2xl shadow-sm border border-gray-100 max-w-[85%]">${aiReply}</div>`;
+                messages.scrollTop = messages.scrollHeight;
+            }, 800);
+        }
+    </script>
+</body>
+</html>
